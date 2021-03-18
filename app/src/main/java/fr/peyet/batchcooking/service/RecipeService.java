@@ -26,4 +26,17 @@ public class RecipeService {
         return this.recipes;
     }
 
+    public Recipe getRecipeById(long idRecipe) {
+        Recipe recipe = null;
+
+        for (Recipe current : this.recipes) {
+            if (current.getId() == idRecipe) {
+                recipe = current;
+                break;
+            }
+        }
+
+        return recipe;
+    }
+
 }

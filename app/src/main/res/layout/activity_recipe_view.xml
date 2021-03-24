@@ -8,13 +8,36 @@
     android:theme="@style/Theme.BatchCooking"
     tools:context=".activity.recipe.view.RecipeViewActivity">
 
-    <TextView
-        android:id="@+id/recipe_view_title"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingVertical="@dimen/title_padding_vertical"
-        android:textSize="@dimen/title_text_size" />
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/title_padding_horizontal"
+        android:paddingVertical="@dimen/title_padding_vertical">
+
+        <TextView
+            android:id="@+id/recipe_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recipe_view_btn_edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/recipe_view_btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/recipe_tabs"

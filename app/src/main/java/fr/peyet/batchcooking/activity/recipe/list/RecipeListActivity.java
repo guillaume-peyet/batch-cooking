@@ -38,12 +38,20 @@ public class RecipeListActivity extends AppCompatActivity {
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(RecipeListActivity.this, 2);
         this.recyclerView.setLayoutManager(gridLayoutManager);
+
+        // Configuration du bouton d'ajout d'une recette
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(this::addRecipe);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Objects.requireNonNull(this.recyclerView.getAdapter()).notifyDataSetChanged();
+    }
+
+    private void addRecipe(View view) {
+        RecipeListActivity.this.startActivity(new Intent(view.getContext(), RecipeEditActivity.class));
     }
 
 }

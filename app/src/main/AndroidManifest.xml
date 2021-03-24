@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".activity.recipe.view.RecipeViewActivity" />
+        <activity android:name=".activity.recipe.edit.RecipeEditActivity" />
 
     </application>
 

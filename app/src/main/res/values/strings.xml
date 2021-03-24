@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Batch Cooking</string>
     <string name="recipe_list_title">Liste des recettes</string>
+    <string name="add_recipe_btn_description">Ajouter une recette</string>
+    <string name="recipe_edit_title">Édition de recette</string>
+    <string name="title">Titre</string>
+    <string name="save">Enregistrer</string>
 </resources>

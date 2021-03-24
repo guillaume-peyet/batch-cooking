@@ -39,4 +39,30 @@ public class RecipeService {
         return recipe;
     }
 
+    private int indexOfRecipe(Recipe recipe) {
+        int index = -1;
+
+        for (int i = 0; i < this.recipes.size(); i++) {
+            if (this.recipes.get(i).getId() == recipe.getId()) {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
+    public void save(Recipe recipe) {
+        int position = this.indexOfRecipe(recipe);
+
+        if (position < 0) {
+            // La recette spécifiée n'existe pas, on l'ajoute en fin de liste
+            recipe.setId(this.recipes.size() + 1);
+            this.recipes.add(recipe);
+        } else {
+            // La recette spécifiée existe déjà, on la remplace
+            this.recipes.set(position, recipe);
+        }
+    }
+
 }
